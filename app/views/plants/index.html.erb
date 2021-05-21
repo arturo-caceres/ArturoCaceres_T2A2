@@ -1,19 +1,4 @@
 <h1>beLeaf</h1>
 
-<h3>Home</h3>
-
-<h3>About</h3> 
-
 <h5>Be part of our exclusive club, and indulge in our private collection of international rare flora.</h5>
 
-
-
-<ul>
-  <% @plants.each do |plant| %>
-    <li>
-     <a href="/plants/<%= plant.id %>">
-      <%= plant.home %>
-      </a>
-    </li>
-  <% end %>
-</ul>
