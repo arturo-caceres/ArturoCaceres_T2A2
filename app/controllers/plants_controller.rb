@@ -6,7 +6,8 @@ class PlantsController < ApplicationController
     def about
     end
 
-
+    def login
+    end
 
 
 end;
