@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
@@ -13,7 +14,12 @@
   <body>
 
   <%= render "plants/navbar" %>
+ 
+  <div class="container">
+       <%= yield %>
+  </div>
 
-    <%= yield %>
+   <%= render "plants/footer" %>
+
   </body>
 </html>
