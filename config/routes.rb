@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get "/plants/sell", to: "plants#sell"
 
+  get "/plants/sell/new", to: "plants#sell_new"
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

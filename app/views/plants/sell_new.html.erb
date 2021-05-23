@@ -1,0 +1,21 @@
+<div class="col-md-6 offset-md-3">
+  <div class="bg-light p-5 rounded-lg m-3">
+    <div class="mb-3">
+        <%= form_with model: @plant do |form| %>
+        <div>
+            <%= form.label :Name_of_flora %><br>
+            <%= form.text_field :Name_of_Flora, class: "form-control" %>
+        </div>
+
+        <div>
+            <%= form.label :Other_information %><br>
+            <%= form.text_area :Other_information, class: "form-control" %>
+        </div>
+
+        <div>
+            <%= form.submit "Save", class: "btn btn-secondary" %>
+        </div>
+        <% end %>
+    </div>
+  </div>  
+</div>
