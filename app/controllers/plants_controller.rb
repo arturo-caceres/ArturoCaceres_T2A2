@@ -35,6 +35,13 @@ class PlantsController < ApplicationController
     end
   end
 
+  def destroy
+    @plant = Plant.find(params[:id])
+    @plant.destroy
+
+    redirect_to plants_path
+  end
+
   private
 
   def plant_params

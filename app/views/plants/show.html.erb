@@ -1,10 +1,14 @@
-<h3><center>Hi<center></h3>
+<h3>
+    <center>Editing Details<center>
+</h3>
 
-    <h1><%= @plant.name %></h1>
+<p><%= @plant.name %></p>
 
 <p><%= @plant.age %></p>
 
 <ul>
     <li><%= link_to "Edit", edit_plant_path(@plant) %></li>
-  </ul>
-  
+    <li><%= link_to "Destroy", plant_path(@plant),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
