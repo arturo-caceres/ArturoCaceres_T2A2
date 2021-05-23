@@ -9,5 +9,7 @@ class PlantsController < ApplicationController
     def collection
     end
 
+    def sell
+    end
 
 end;
