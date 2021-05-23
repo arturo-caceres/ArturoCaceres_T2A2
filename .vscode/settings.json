@@ -1,0 +1,7 @@
+{
+    "rufo.exe": "/Users/arturocaceres/.rvm/gems/ruby-3.0.0/bin/rufo",  // can be an absolute path
+    "rufo.useBundler": false,
+    "[ruby]": {
+        "editor.defaultFormatter": "jnbt.vscode-rufo"
+    },
+}

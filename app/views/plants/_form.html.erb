@@ -1,0 +1,19 @@
+<%= form_with model: plant do |form| %>
+<div>
+  <%= form.label :name %><br />
+  <%= form.text_field :name %> <% plant.errors.full_messages_for(:name).each do
+  |message| %>
+  <div><%= message %></div>
+  <% end %>
+</div>
+
+<div>
+  <%= form.label :age %><br />
+  <%= form.text_area :age %><br />
+  <% plant.errors.full_messages_for(:age).each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+</div>
+
+<div><%= form.submit %></div>
+<% end %>

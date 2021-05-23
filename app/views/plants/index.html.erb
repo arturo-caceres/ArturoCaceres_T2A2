@@ -1,7 +1,21 @@
-
 <br>
-<h5 class="index_main_text">Be part of our exclusive club, and indulge in our private collection of international rare flora.</h5>
+<h3><center>No listing of your plants, yet!<center></h3>
+<br><br><br><br>
 
-<%= image_tag "image-one.jpg", alt: "Website main photo", class: "image-one" %>
+<ul>
+    <% @plants.each do |plant| %>
+      <li>
+        <a href="/plants/<%= plant.id %>">
+          <%= plant.name %>, <%= plant.age %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
 
-<%= button_to "View our collection", user_signed_in? ? plants_collection_path : new_user_session_path, method: :get, class: "btn btn-secondary" %>
+
+
+<h6><center>Interested in selling?.<center></h6>
+<br>
+
+
+<center><%= button_to "Sell here!", new_plant_path, method: :get, class: "btn btn-secondary" %><center?>
