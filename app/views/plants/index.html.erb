@@ -1,8 +1,14 @@
 <br>
-<% if @plants.length > 0   %>
+<h1>
+    My Plants<%= button_to "Sell here!", new_plant_path, method: :get, class: "btn btn-secondary" %>
+
+</h1>
+
+<% if current_user.plants.length > 0   %>
+
 
 <ul>
-    <% @plants.each do |plant| %>
+    <% current_user.plants.each do |plant| %>
     <li>
         <a href="/plants/<%= plant.id %>">
             <%= plant.name %>, <%= plant.age %>
@@ -11,7 +17,6 @@
     <% end %>
 </ul>
 
-
 <% else %>
 <h3 class="heading_sell_text">
     <center>No listing of your plants, yet!<center>
@@ -19,15 +24,18 @@
 
 <% end %>
 
-<br><br><br><br>
 
 
-
-
-<h6>
-    <center>Interested in selling?.<center>
-</h6>
+<h1>
+    <center>Collection<center>
+</h1>
+<ul>
+    <% @collection.each do |plant| %>
+    <li>
+        <a href="/plants/<%= plant.id %>">
+            <%= plant.name %>, <%= plant.age %>
+        </a>
+    </li>
+    <% end %>
+</ul>
 <br>
-
-
-<center><%= button_to "Sell here!", new_plant_path, method: :get, class: "btn btn-secondary" %><center?>

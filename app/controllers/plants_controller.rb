@@ -1,7 +1,6 @@
 class PlantsController < ApplicationController
   def index
-    @plants = Plant.all
-    p @plants.length
+    @collection = Plant.all.select { |plant| plant.user_id != current_user.id }
   end
 
   def new
@@ -13,7 +12,7 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = Plant.new(plant_params)
+    @plant = current_user.plants.build(plant_params)
 
     if @plant.save
       redirect_to @plant

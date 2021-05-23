@@ -1,7 +1,6 @@
-
 <br>
 <h5 class="index_main_text">Be part of our exclusive club, and indulge in our private collection of international rare flora.</h5>
 
 <%= image_tag "image-one.jpg", alt: "Website main photo", class: "image-one" %>
 
-<%= button_to "View our collection", user_signed_in? ? plants_collection_path : new_user_session_path, method: :get, class: "btn btn-secondary" %>
+<%= button_to "View our collection", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-secondary" %>
