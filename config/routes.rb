@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get "/plants/about", to: "plants#about"
 
-  get "/plants/login", to: "plants#login"
+  get "/plants/collection", to: "plants#collection"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
