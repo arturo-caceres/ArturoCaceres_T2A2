@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # Route is for devise login redirection
   get "/plants/collection", to: "plants#collection", :as => :user_root
 
-
+  get "/plants/sell", to: "plants#sell"
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
