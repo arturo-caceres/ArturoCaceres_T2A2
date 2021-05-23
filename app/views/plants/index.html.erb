@@ -1,20 +1,32 @@
 <br>
-<h3><center>No listing of your plants, yet!<center></h3>
-<br><br><br><br>
+<% if @plants.length > 0   %>
 
 <ul>
     <% @plants.each do |plant| %>
-      <li>
+    <li>
         <a href="/plants/<%= plant.id %>">
-          <%= plant.name %>, <%= plant.age %>
+            <%= plant.name %>, <%= plant.age %>
         </a>
-      </li>
+    </li>
     <% end %>
-  </ul>
+</ul>
+
+
+<% else %>
+<h3 class="heading_sell_text">
+    <center>No listing of your plants, yet!<center>
+</h3>
+
+<% end %>
+
+<br><br><br><br>
 
 
 
-<h6><center>Interested in selling?.<center></h6>
+
+<h6>
+    <center>Interested in selling?.<center>
+</h6>
 <br>
 
 
