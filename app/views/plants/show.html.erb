@@ -6,6 +6,10 @@
 <p><%= @plant.name %></p>
 <p><%= @plant.age %></p>
 
+<% if @plant.image.attached?%>
+<%= image_tag url_for(@plant.image), class: "plant" %>
+<%end%>
+
 
 <%if current_user.id == @plant.user_id %>
 
