@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "plants#home"
 
+  #Route to the about page
   get "/about", to: "about#index"
 
   resources :plants

@@ -1,6 +1,7 @@
-<br>
-<% flash.each do |name, msg| %>
-    <div class="alert alert-warning" role="alert">   
-        <%= content_tag(:div, msg) %>
-    </div>
-<% end %>
+ <%# Alert message the user will see when logged in %>
+ <br>
+ <% flash.each do |name, msg| %>
+ <div class="alert alert-warning" role="alert">
+     <%= content_tag(:div, msg) %>
+ </div>
+ <% end %>

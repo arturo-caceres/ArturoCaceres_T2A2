@@ -1,18 +1,20 @@
+<%# Adding a form so taht the user can input data %>
+
 <%= form_with model: plant do |form| %>
 <div>
-  <%= form.label :name %><br />
-  <%= form.text_field :name %> <% plant.errors.full_messages_for(:name).each do
+    <%= form.label :name %><br />
+    <%= form.text_field :name %> <% plant.errors.full_messages_for(:name).each do
   |message| %>
-  <div><%= message %></div>
-  <% end %>
+    <div><%= message %></div>
+    <% end %>
 </div>
 
 <div>
-  <%= form.label :age %><br />
-  <%= form.text_area :age %><br />
-  <% plant.errors.full_messages_for(:age).each do |message| %>
-  <div><%= message %></div>
-  <% end %>
+    <%= form.label :age %><br />
+    <%= form.text_area :age %><br />
+    <% plant.errors.full_messages_for(:age).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
 </div>
 
 <div><%= form.submit %></div>

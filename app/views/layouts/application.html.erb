@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Beleaf</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -8,19 +9,21 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
-  </head>
+</head>
 
-  <body>
+<body>
+    <%# Using partial to render _navbar  %>
+    <%= render "layouts/navbar" %>
 
-  <%= render "layouts/navbar" %>
- 
-  <div class="container">
-    <%= render "layouts/flash" %>
+    <div class="container">
+        <%# Using partial to render _flash  %>
+        <%= render "layouts/flash" %>
+        <%= yield %>
+    </div>
 
-       <%= yield %>
-  </div>
+    <%# Using partial to render _footer  %>
+    <%= render "layouts/footer" %>
 
-   <%= render "layouts/footer" %>
+</body>
 
-  </body>
 </html>
