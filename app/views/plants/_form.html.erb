@@ -1,4 +1,4 @@
-<%# Adding a form so taht the user can input data %>
+<%# Adding a form so that the user can input data %>
 
 <%= form_with model: plant do |form| %>
 <div>
@@ -15,6 +15,11 @@
     <% plant.errors.full_messages_for(:age).each do |message| %>
     <div><%= message %></div>
     <% end %>
+</div>
+
+<div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
 </div>
 
 <div><%= form.submit %></div>
