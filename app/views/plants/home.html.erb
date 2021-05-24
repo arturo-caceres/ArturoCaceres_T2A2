@@ -1,8 +1,16 @@
 <br>
-<h5 class="index_main_text">Be part of our exclusive club, and indulge in our private collection of international rare flora.</h5>
+
 
 <%# Static image for home view %>
-<%= image_tag "image-one.jpg", alt: "Website main photo", class: "image-one" %>
+<%
+=begin%>
+<%= image_tag "beleaf-main.jpeg", alt: "Website main photo", class: "image-one" %>
+<%
+=end%>
 
-<%# Condition used to redirect the user to the Plants page, once logged in  %>
-<%= button_to "View our collection", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-secondary" %>
+<div class="home-background">
+    <h1>BeLeaf!</h1>
+    <h5 class="index_main_text">Be part of our exclusive club, and indulge in our private collection of international rare flora.</h5>
+    <%# Condition used to redirect the user to the Plants page, once logged in  %>
+    <center><%= button_to "View our collection", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-secondary" %><center>
+</div>

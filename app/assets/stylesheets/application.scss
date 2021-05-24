@@ -12,14 +12,28 @@
  *
  */
 
-.image-one {
-  width: 200px;
-  height: 400px;
+.home-background {
+  background-image: url(image-path("beleaf-main.jpeg"));
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  top: -57px;
+  left: 0;
+  right: 0;
 }
 
 img.plant {
   display: block;
   width: 9rem;
+}
+
+.button-container form {
+  display: inline;
+}
+
+.button-container form + form {
+  margin-left: 10px;
 }
 
 // CSS FROM BOOTSTRAP

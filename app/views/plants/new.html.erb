@@ -1,22 +1,9 @@
 <%# "Adding a new entry" view when user wants to sell a plant.  %>
-<div class="col-md-6 offset-md-3">
-    <div class="bg-light p-5 rounded-lg m-3">
-        <div class="mb-3">
+<h1>
+    <center>New Plant<center>
+</h1>
 
-            <%= form_with model: @plant do |form|
-      %>
-            <div>
-                <%= form.label :name, "Name of flora" %><br />
-                <%= form.text_field :name, class: "form-control" %>
-            </div>
+<%# Using partial to render _form  %>
+<%= render "form", plant: @plant %>
 
-            <div>
-                <%= form.label :age, "Age of flora" %><br />
-                <%= form.text_field :age, class: "form-control" %>
-            </div>
-            <br>
-            <div><%= form.submit "Save", class: "btn btn-secondary" %></div>
-            <% end %>
-        </div>
-    </div>
-</div>
+<center><%= link_to "Back", plants_path, class: "btn btn-secondary" %><center>

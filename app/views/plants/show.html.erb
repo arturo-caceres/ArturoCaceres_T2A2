@@ -1,25 +1,35 @@
 <%# "Adding a new entry" view when user wants to sell a plant.  %>
-<h3>
-    <center>Editing Details<center>
-</h3>
 
-<p><%= @plant.name %></p>
-<p><%= @plant.age %></p>
+<div class="col-md-6 offset-md-3">
+    <div class="bg-light p-5 rounded-lg m-3">
+        <div class="mb-3">
 
-<% if @plant.image.attached?%>
-<%= image_tag url_for(@plant.image), class: "plant" %>
-<%end%>
+            <h3>
+                <center>Details of your plant<center>
+            </h3>
+            <br>
+            <label for="plant_name">Name of flora: <%= @plant.name %></label>
+            <br>
+            <label for="plant_name">Age of flora: <%= @plant.age %></label>
+
+            <% if @plant.image.attached?%>
+            <%= image_tag url_for(@plant.image), class: "plant" %>
+            <%end%>
 
 
-<%if current_user.id == @plant.user_id %>
-
-<ul>
-    <li><%= link_to "Edit", edit_plant_path(@plant) %></li>
-    <li><%= link_to "Destroy", plant_path(@plant),
+            <%if current_user.id == @plant.user_id %>
+            <br>
+            <div class="button-container">
+                <%= button_to "Edit", edit_plant_path(@plant), class: "btn btn-success", method: :get %>
+                <%= button_to "Destroy", plant_path(@plant), class: "btn btn-danger", 
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>
-<%else%>
+                  data: { confirm: "Are you sure?" } %>
+            </div>
+            <%else%>
 
-<%end%>
-<%= link_to "Back", plants_path %>
+            <%end%>
+
+        </div>
+    </div>
+</div>
+<center><%= link_to "Back", plants_path, class: "btn btn-outline-secondary" %><center>
