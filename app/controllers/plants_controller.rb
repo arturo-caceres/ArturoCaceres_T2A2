@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
   def index
+    print @current_user
     @collection = Plant.all.select { |plant| plant.user_id != current_user.id }
   end
 
@@ -18,6 +19,17 @@ class PlantsController < ApplicationController
       redirect_to @plant
     else
       render :new
+    end
+  end
+
+  def buy
+    @plant = Plant.find(params[:id])
+
+    @plant.buyer = current_user
+    if @plant.save
+      redirect_to @plant
+    else
+      render :index
     end
   end
 

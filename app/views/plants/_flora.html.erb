@@ -7,14 +7,18 @@
             <div class="plant">
                 <a href="/plants/<%= plant.id %>" class="nounderline">
                     <%= plant.name %>, <%= plant.age %>
+                    <div>
+                        <%= image_tag plant.image, class: "image-box" if plant.image.attached? %>
+                    </div>
                 </a>
-                <div>
-                    <%= image_tag plant.image, class: "image-box" if plant.image.attached? %>
-                </div>
                 <% if show_buttons %>
                 <div class="button-container">
-                    <%= button_to "Buy", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
-                    <%= button_to "Price", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
+                    <% if !plant.buyer %>
+                    <%= button_to "Buy", user_signed_in? ? buy_plant_path(plant) : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
+                    <%= button_to "Price", user_signed_in? ? plant_path(plant) : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
+                    <% else %>
+                    Out of Stock
+                    <% end %>
                 </div>
                 <% end %>
             </div>
