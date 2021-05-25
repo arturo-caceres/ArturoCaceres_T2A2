@@ -7,7 +7,7 @@
             <%= form_with model: plant do |form| %>
             <div>
                 <%= form.label :name, "Name of flora" %><br />
-                <%= form.text_field :name, class: "form-control" %>
+                <%= form.text_field :name, class: "form-control" %><br />
                 <% plant.errors.full_messages_for(:name).each do |message| %>
                 <div><%= message %></div>
                 <% end %>
@@ -17,6 +17,38 @@
                 <%= form.label :age, "Age of flora" %><br />
                 <%= form.text_field :age, class: "form-control" %><br />
                 <% plant.errors.full_messages_for(:age).each do |message| %>
+                <div><%= message %></div>
+                <% end %>
+            </div>
+
+            <div>
+                <%= form.label :height_flora, "Height of flora" %><br />
+                <%= form.text_field :height_flora, class: "form-control" %><br />
+                <% plant.errors.full_messages_for(:height_flora).each do |message| %>
+                <div><%= message %></div>
+                <% end %>
+            </div>
+
+            <div>
+                <%= form.label :height_pot, "Height of pot" %><br />
+                <%= form.text_field :height_pot, class: "form-control" %><br />
+                <% plant.errors.full_messages_for(:height_pot).each do |message| %>
+                <div><%= message %></div>
+                <% end %>
+            </div>
+
+            <div>
+                <%= form.label :price, "Price" %><br />
+                <%= form.text_field :price, class: "form-control" %><br />
+                <% plant.errors.full_messages_for(:price).each do |message| %>
+                <div><%= message %></div>
+                <% end %>
+            </div>
+
+            <div>
+                <%= form.label :other_information, "Other information" %><br />
+                <%= form.text_area :other_information, class: "form-control" %><br />
+                <% plant.errors.full_messages_for(:other_information).each do |message| %>
                 <div><%= message %></div>
                 <% end %>
             </div>

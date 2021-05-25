@@ -8,9 +8,17 @@
                 <center>Details of your plant<center>
             </h3>
             <br>
-            <label for="plant_name">Name of flora: <%= @plant.name %></label>
+            <label for="plant_name">🌿 Name of flora: <%= @plant.name %></label>
             <br>
-            <label for="plant_name">Age of flora: <%= @plant.age %></label>
+            <label for="plant_name">⏳ Age of flora: <%= @plant.age %></label>
+            <br>
+            <label for="plant_name">🌴 Height of flora: <%= @plant.height_flora %></label>
+            <br>
+            <label for="plant_name">🪴 Height of pot: <%= @plant.height_pot %></label>
+            <br>
+            <label for="plant_name">💸 Selling price: <%= @plant.price %></label>
+            <br>
+            <label for="plant_name">🔍 Other information: <%= @plant.other_information %></label>
 
 
             <% if @plant.image.attached?%>

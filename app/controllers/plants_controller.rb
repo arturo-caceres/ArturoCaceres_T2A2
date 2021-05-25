@@ -18,6 +18,7 @@ class PlantsController < ApplicationController
     if @plant.save
       redirect_to @plant
     else
+      p @plant.errors
       render :new
     end
   end
@@ -57,6 +58,6 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :age, :image)
+    params.require(:plant).permit(:name, :age, :height_flora, :height_pot, :price, :other_information, :image)
   end
 end

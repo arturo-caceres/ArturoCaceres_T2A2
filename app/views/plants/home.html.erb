@@ -4,10 +4,16 @@
             <%= image_tag "image-one.jpeg", alt: "Website main photo", class: "image-one" %>
         </div>
         <div class="col-6 align-self-center">
-            <h1>BeLeaf!</h1>
-            <h5 class="index_main_text">Be part of our exclusive club, and indulge in our private collection of international rare flora.</h5>
-            <%# Condition used to redirect the user to the Plants page, once logged in  %>
-            <center><%= button_to "View our collection", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-secondary" %><center>
+            <h1>
+                <center>BeLeaf<center>
+            </h1>
+            <br>
+            <center>
+                <h5 class="index_main_text">Be part of our exclusive club, and indulge in our private collection of international rare flora.</h5>
+                <center>
+                    <br>
+                    <%# Condition used to redirect the user to the Plants page, once logged in  %>
+                    <center><%= button_to "View our collection", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-secondary" %><center>
         </div>
     </div>
 </div>
