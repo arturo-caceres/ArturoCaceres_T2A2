@@ -12,22 +12,25 @@
             <br>
             <label for="plant_name">Age of flora: <%= @plant.age %></label>
 
+
             <% if @plant.image.attached?%>
-            <%= image_tag url_for(@plant.image), class: "plant" %>
-            <%end%>
+            <center>
+                <%= image_tag url_for(@plant.image), class: "plant" %>
+                <center>
+                    <%end%>
 
 
-            <%if current_user.id == @plant.user_id %>
-            <br>
-            <div class="button-container">
-                <%= button_to "Edit", edit_plant_path(@plant), class: "btn btn-success", method: :get %>
-                <%= button_to "Destroy", plant_path(@plant), class: "btn btn-danger", 
+                    <%if current_user.id == @plant.user_id %>
+                    <br>
+                    <div class="button-container">
+                        <%= button_to "Edit", edit_plant_path(@plant), class: "btn btn-success", method: :get %>
+                        <%= button_to "Destroy", plant_path(@plant), class: "btn btn-danger", 
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
-            </div>
-            <%else%>
+                    </div>
+                    <%else%>
 
-            <%end%>
+                    <%end%>
 
         </div>
     </div>

@@ -1,6 +1,6 @@
 <br>
 <h1>
-    My Plants<%= button_to "Sell here!", new_plant_path, method: :get, class: "btn btn-secondary" %>
+    <center>My Plants<center><%= button_to "Sell here!", new_plant_path, method: :get, class: "btn btn-secondary" %>
 </h1>
 
 <%# Condition used to check if the current_user has added any plants to sell, if so, plants will be displayed, 
@@ -12,9 +12,9 @@ poseted to sell.  %>
 
 <ul>
     <% current_user.plants.each do |plant| %>
-    <li>
-        <a href="/plants/<%= plant.id %>">
-            <%= plant.name %>, <%= plant.age %>
+    <li class="btn btn-secondary">
+        <a href="/plants/<%= plant.id %>" class="nounderline">
+            <%= plant.name %> - <%= plant.age %>
         </a>
     </li>
 
@@ -34,13 +34,32 @@ poseted to sell.  %>
 <h1>
     <center>Collection<center>
 </h1>
-<ul>
-    <% @collection.each do |plant| %>
-    <li>
-        <a href="/plants/<%= plant.id %>">
-            <%= plant.name %>, <%= plant.age %>
-        </a>
-    </li>
-    <% end %>
-</ul>
+
+
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+        <% @collection.each do |plant| %>
+        <div class="col .col-md-2 gy-5">
+            <div class="plant">
+                <a href="/plants/<%= plant.id %>" class="nounderline">
+                    <%= plant.name %>, <%= plant.age %>
+                </a>
+                <div>
+                    <%= image_tag plant.image, class: "image-box" if plant.image.attached? %>
+                </div>
+                <div class="button-container">
+                    <%= button_to "Buy", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
+                    <%= button_to "Price", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
+                </div>
+            </div>
+            <div class="square"></div>
+
+        </div>
+        <% end %>
+
+    </div>
+</div>
+
+
 <br>

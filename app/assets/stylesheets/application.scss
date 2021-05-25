@@ -26,6 +26,11 @@
 img.plant {
   display: block;
   width: 9rem;
+  margin: 20px 0 0 0;
+}
+
+.col {
+  // border: 1px solid red;
 }
 
 .button-container form {
@@ -34,6 +39,30 @@ img.plant {
 
 .button-container form + form {
   margin-left: 10px;
+}
+
+.selling-image {
+  width: 9rem;
+  margin: 10px 0 10px 0;
+}
+
+.nounderline {
+  text-decoration: none !important;
+  color: black;
+}
+.plant {
+  // width: 240px;
+  margin: 0 auto;
+  max-width: 270px;
+  text-align: center;
+  background-color: #e9ecef;
+  border-radius: 10px;
+}
+
+.image-box {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
 }
 
 // CSS FROM BOOTSTRAP
