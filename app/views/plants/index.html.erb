@@ -10,56 +10,21 @@ If they don't want to sell it, they can delete the entry of the plant and keep i
 poseted to sell.  %>
 <% if current_user.plants.length > 0   %>
 
-<ul>
-    <% current_user.plants.each do |plant| %>
-    <li class="btn btn-secondary">
-        <a href="/plants/<%= plant.id %>" class="nounderline">
-            <%= plant.name %> - <%= plant.age %>
-        </a>
-    </li>
-
-    <% end %>
-</ul>
+<%= render "flora", plant_list: @current_user.plants, show_buttons: false %>
 
 <% else %>
+
 
 <h3 class="heading_sell_text">
     <center>No listing of your plants, yet!<center>
 </h3>
 
 <% end %>
-
+<br><br><br>
 
 <%# Area where users will be able to see the plants available to buy.  %>
 <h1>
     <center>Collection<center>
 </h1>
 
-
-
-<div class="container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
-        <% @collection.each do |plant| %>
-        <div class="col .col-md-2 gy-5">
-            <div class="plant">
-                <a href="/plants/<%= plant.id %>" class="nounderline">
-                    <%= plant.name %>, <%= plant.age %>
-                </a>
-                <div>
-                    <%= image_tag plant.image, class: "image-box" if plant.image.attached? %>
-                </div>
-                <div class="button-container">
-                    <%= button_to "Buy", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
-                    <%= button_to "Price", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
-                </div>
-            </div>
-            <div class="square"></div>
-
-        </div>
-        <% end %>
-
-    </div>
-</div>
-
-
-<br>
+<%= render "flora", plant_list: @collection, show_buttons: true %>

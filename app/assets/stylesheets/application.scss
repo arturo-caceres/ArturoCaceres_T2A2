@@ -11,16 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
-.home-background {
-  background-image: url(image-path("beleaf-main.jpeg"));
-  background-size: cover;
-  height: 100vh;
+.image-one {
   width: 100%;
-  position: relative;
-  top: -49px;
-  left: 0;
-  right: 0;
 }
 
 img.plant {
@@ -57,12 +49,14 @@ img.plant {
   text-align: center;
   background-color: #e9ecef;
   border-radius: 10px;
+  padding-bottom: 15px;
 }
 
 .image-box {
   width: 240px;
   height: 240px;
   object-fit: cover;
+  margin-bottom: 15px;
 }
 
 // CSS FROM BOOTSTRAP

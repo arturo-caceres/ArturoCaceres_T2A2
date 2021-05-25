@@ -1,0 +1,27 @@
+<%# Adding a partial for the list of plants, both user and plants to buy. %>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+        <% plant_list.each do |plant| %>
+        <div class="col .col-md-2 gy-5">
+            <div class="plant">
+                <a href="/plants/<%= plant.id %>" class="nounderline">
+                    <%= plant.name %>, <%= plant.age %>
+                </a>
+                <div>
+                    <%= image_tag plant.image, class: "image-box" if plant.image.attached? %>
+                </div>
+                <% if show_buttons %>
+                <div class="button-container">
+                    <%= button_to "Buy", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
+                    <%= button_to "Price", user_signed_in? ? plants_path : new_user_session_path, method: :get, class: "btn btn-outline-success" %>
+                </div>
+                <% end %>
+            </div>
+            <div class="square"></div>
+
+        </div>
+        <% end %>
+
+    </div>
+</div>
