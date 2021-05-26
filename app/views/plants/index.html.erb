@@ -11,6 +11,14 @@ poseted to sell.  %>
 <% if current_user.plants.length > 0   %>
 
 <%= render "flora", plant_list: @current_user.plants, show_buttons: false %>
+<br><br>
+
+<hr>
+
+<h1>
+    <center>My Orders<center>
+</h1>
+<%= render "flora", plant_list: @current_user.bought_plants, show_buttons: false %>
 
 <% else %>
 
@@ -21,7 +29,7 @@ poseted to sell.  %>
 
 <% end %>
 <br><br><br>
-
+<hr>
 <%# Area where users will be able to see the plants available to buy.  %>
 <h1>
     <center>Collection<center>
