@@ -1,7 +1,19 @@
 class PlantsController < ApplicationController
   def index
-    print @current_user
-    @collection = Plant.all.select { |plant| plant.user_id != current_user.id }
+    @user_created_plants = current_user.plants
+    @user_created_plants = @user_created_plants.filter_by_name(params[:query]) if params[:query].present?
+
+    @user_bought_plants = current_user.bought_plants
+    @user_bought_plants = @user_bought_plants.filter_by_name(params[:query]) if params[:query].present?
+
+    @collection = Plant.where(nil)
+    @collection = @collection.filter_by_name(params[:query]) if params[:query].present?
+    @collection = @collection.select { |plant| plant.user_id != current_user.id }
+  end
+
+  def search
+    p params[:query]
+    redirect_to action: "index", query: params[:query]
   end
 
   def new

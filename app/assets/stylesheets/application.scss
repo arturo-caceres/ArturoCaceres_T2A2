@@ -55,6 +55,16 @@ img.plant_view {
   margin-bottom: 15px;
 }
 
+.search-form {
+  input.form-control {
+    display: inline-block;
+    width: auto;
+  }
+  input[type="submit"] {
+    margin-bottom: 4px;
+  }
+}
+
 // CSS FROM BOOTSTRAP
 
 @import "bootstrap";

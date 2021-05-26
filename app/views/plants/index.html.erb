@@ -1,33 +1,56 @@
+<div class="row">
+    <div class="col-auto">
+        <%= form_with url: plants_search_path, method: :get do |form| %>
+        <div class="search-form">
+            <%= form.label :query, "Search for:" %>
+            <%= form.text_field :query, class: "form-control" %>
+            <%= form.submit "Search", class: "btn btn-outline-secondary" %>
+        </div>
+        <% end %>
+    </div>
+
+    <% if params[:query]%>
+    <div class="col-auto">
+        <%= form_with url: plants_path, method: :get do |form| %>
+        <div class="search-form">
+            <%= form.submit "Clear search", class: "btn btn-outline-danger" %>
+        </div>
+        <% end %>
+    </div>
+    <% end %>
+</div>
+
+
 <br>
 <h1>
     <center>My Plants<center><%= button_to "Sell here!", new_plant_path, method: :get, class: "btn btn-secondary" %>
 </h1>
+
+
 
 <%# Condition used to check if the current_user has added any plants to sell, if so, plants will be displayed, 
 if not, they will get a message they dont have plants listed. %>
 <%# Please note that current_users will not be able to see their own plants in the Collection as they are selling their plants. 
 If they don't want to sell it, they can delete the entry of the plant and keep it. They will be able to see what everyone else has 
 poseted to sell.  %>
-<% if current_user.plants.length > 0   %>
+<% if @user_created_plants.length > 0   %>
 
-<%= render "flora", plant_list: @current_user.plants, show_buttons: false %>
-<br><br>
-
-<hr>
-
-<h1>
-    <center>My Orders<center>
-</h1>
-<%= render "flora", plant_list: @current_user.bought_plants, show_buttons: false %>
+<%= render "flora", plant_list: @user_created_plants, show_buttons: false %>
+<br><br><br>
 
 <% else %>
-
-
 <h3 class="heading_sell_text">
     <center>No listing of your plants, yet!<center>
 </h3>
-
 <% end %>
+
+<hr>
+<h1>
+    <center>My Orders<center>
+</h1>
+<%= render "flora", plant_list: @user_bought_plants, show_buttons: false %>
+
+
 <br><br><br>
 <hr>
 <%# Area where users will be able to see the plants available to buy.  %>

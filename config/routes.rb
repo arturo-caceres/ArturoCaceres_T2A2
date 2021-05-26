@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #Route to the about page
   get "/about", to: "about#index"
 
+  get "/plants/search", to: "plants#search"
   resources :plants
   get "/plants/:id/buy", to: "plants#buy", as: :buy_plant
 
