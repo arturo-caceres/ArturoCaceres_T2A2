@@ -76,7 +76,7 @@ User will be able to manage everything through their dashboard. Users will see t
 
 ## **Sitemap**
 
-![Sitemap](./docs/beleaf-sitemap.png)
+![Sitemap](./docs/Beleaf-sitemap.png)
 
 <hr>
 
@@ -184,9 +184,9 @@ For this application, the target audience is mainly users who are interested in 
 
 Wireframes were created with balsamiq.
 
-![Wireframe](./docs/w1.png)
+![Wireframe](./docs/W1.png)
 
-![Wireframe](./docs/w2.png)
+![Wireframe](./docs/W2.png)
 
 <hr>
 
@@ -212,7 +212,7 @@ Balsamiq: is a user interface design tool for creating wireframes (sometimes cal
 
 ## **ERD & Schema database design**
 
-![ERD](./docs/ERD.png)
+![ERD](./docs/erd.png)
 
 ![ERD](./docs/schema.png)
 
