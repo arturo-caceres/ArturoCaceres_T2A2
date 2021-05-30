@@ -1,6 +1,6 @@
 # **Beleaf**
 
-### Deployed application: [Beleaf](beleaf-rails.herokuapp.com)
+### Deployed application: [Beleaf](https://beleaf-rails.herokuapp.com/)
 
  <br>
  
