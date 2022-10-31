@@ -275,7 +275,9 @@ Trello was used to manage the project and it was distributed with features, idea
 
 <hr>
 
+
 ## **Upcoming Beleaf 2.0**
+
 
 Part of the original idea for this project, was also that a user would be able to have access to **"Beleaf on second chances"**, a plant hospital for plants. Many people will get a plant, and has no clue on how to take care after it, and will not take in cosideration all the conditions a plant needs, for it to keep living.
 
